@@ -1,0 +1,15 @@
+#include<pthread.h>
+
+void *myThreadFunction(void *arg);
+
+int main() {
+    pthread_t myThread;
+    pthread_create(&myThread, NULL, myThreadFunction, NULL);
+    // ...
+    pthread_exit(NULL);
+}
+
+void *myThreadFunction(void *arg) {
+    // thread code here
+    return NULL;
+}

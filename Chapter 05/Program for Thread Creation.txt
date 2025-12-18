@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
+#include <unistd.h>
+
+void *thread_func(void *arg) {
+    // Thread function code goes here
+    int i = 0;
+    while(i < 5) {
+        printf("Hello , I am running in thread\n");
+        sleep(1);
+        i++;
+    }
+    return NULL;
+}

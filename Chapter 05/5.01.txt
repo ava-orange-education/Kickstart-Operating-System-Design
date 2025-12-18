@@ -1,0 +1,20 @@
+int main() {
+    pthread_t thread;
+    pthread_attr_t attr;
+    int ret;
+
+    // Initialize attributes to default values
+    ret = pthread_attr_init(&attr);
+    if (ret != 0) {
+        perror("pthread_attr_init");
+        exit(EXIT_FAILURE);
+    }
+
+    // Set stack size attribute
+    size_t stack_size = 1024 * 1024;
+    ret = pthread_attr_setstacksize(&attr, stack_size);
+    if (ret != 0) {
+        perror("pthread_attr_setstacksize");
+        exit(EXIT_FAILURE);
+    }
+}

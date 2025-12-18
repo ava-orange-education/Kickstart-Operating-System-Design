@@ -1,0 +1,20 @@
+// Create thread with attributes
+ret = pthread_create(&thread, &attr, thread_func, NULL);
+if (ret != 0) {
+    perror("pthread_create");
+    exit(EXIT_FAILURE);
+}
+
+int i = 0;
+while (i < 5) {
+    printf("Hello , I am running in main\n");
+    sleep(1);
+    i++;
+}
+
+// Destroy attributes object
+ret = pthread_attr_destroy(&attr);
+if (ret != 0) {
+    perror("pthread_attr_destroy");
+    exit(EXIT_FAILURE);
+}

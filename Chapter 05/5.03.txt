@@ -1,0 +1,21 @@
+// Wait for thread to finish
+ret = pthread_join(thread, NULL);
+if (ret != 0) {
+    perror("pthread_join");
+    exit(EXIT_FAILURE);
+}
+return 0;
+}
+/*
+Op =>// amit@DESKTOP-9LTOFUP:~/0mPracticeC++/Threads$ ./a.out
+Hello , I am running in main
+Hello , I am running in thread
+Hello , I am running in thread
+Hello , I am running in main
+Hello , I am running in thread
+Hello , I am running in main
+Hello , I am running in thread
+Hello , I am running in main
+Hello , I am running in thread
+dHello , I am running in maint
+*/
